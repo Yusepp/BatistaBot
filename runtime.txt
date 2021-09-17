@@ -1,2 +1,2 @@
 python-3.8.12
-ffmpeg-latest
+https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git
