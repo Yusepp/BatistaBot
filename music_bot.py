@@ -111,6 +111,7 @@ class MusicBot(commands.Cog):
     @commands.command()
     async def stop(self, ctx) -> None:
         self.voice_channel.stop()
+        self.is_playing = False
 
     @commands.command()
     async def rm(self, ctx, i) -> None:
@@ -126,6 +127,7 @@ class MusicBot(commands.Cog):
     @commands.command()
     async def dc(self,ctx) -> None:
         await self.voice_channel.disconnect()
+        self.is_playing = False
     
 
 def run() -> None:
