@@ -5,8 +5,6 @@ from discord.ext.commands import bot
 from discord.ext import commands
 from youtube_dl import YoutubeDL
 
-
-
 class MusicBot(commands.Cog):
     def __init__(self, bot) -> None:
         self.bot = bot
@@ -83,12 +81,13 @@ class MusicBot(commands.Cog):
                 await ctx.send("SE HA AÑADIDO: "+song['title'].upper()+" A LA LISTA\n")
                 self.q.append([song, vc])
                 if not self.is_playing:
+                    self.is_playing = True
                     await self.play(ctx)
 
 
     @commands.command()
     async def q(self, ctx) -> None:
-        if not self.q:
+        if not self.q and not self.is_playing:
             await ctx.send("NO HAY CANCIONES MANIN AÑADELAS")
 
         else:
@@ -112,6 +111,7 @@ class MusicBot(commands.Cog):
     async def stop(self, ctx) -> None:
         self.voice_channel.stop()
         self.is_playing = False
+        self.q = []
 
     @commands.command()
     async def rm(self, ctx, i) -> None:
@@ -128,6 +128,7 @@ class MusicBot(commands.Cog):
     async def dc(self,ctx) -> None:
         await self.voice_channel.disconnect()
         self.is_playing = False
+        self.q = []
     
 
 def run() -> None:
