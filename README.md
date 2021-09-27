@@ -1,5 +1,9 @@
 # BatistaBot
-BatistaBot an alternative to Groovy and Rythm music based bots
+BatistaBot an alternative to Groovy and Rythm music based bots.
+BatistaBot's deployment is done using free heroku server so you can use it 24/7. Feel free to ask me any questions about it!
+Google's Firebase Firestore is used for saving data but you can really save it in a SQL.
+
+![Barista Bot](https://i.gyazo.com/2d7a6637310d0e7ce9611b009d1cc4b0.png)
 
 ## Features
 * Play songs and queue them!
