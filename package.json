@@ -3,7 +3,7 @@
         "version": "1.0.0",
         "description": "",
         "scripts": {
-            "build": "pip install -r requirements.txt",
+            "build": "python --version",
             "test": "echo \"No test specified\" && exit 1",
             "start": "python music_bot.py"
         },
